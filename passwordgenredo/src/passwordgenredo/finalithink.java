@@ -292,6 +292,7 @@ public class finalithink
 			if(yn.equalsIgnoreCase("9")) {
 				Random ran = new Random(); 
 				int randomx = ran.nextInt(4); 
+				
 				if(randomx==0) {
 					System.out.println("	　　　　＿_　　 _____　　 ＿_____");
 					System.out.println("	　　　,´　_,, '-´￣￣｀-ゝ 、_ イ、");
@@ -306,7 +307,8 @@ public class finalithink
 					
 					System.out.println("\n   Yukkuri.");
 					
-					break; 
+					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)");
+
 				} else if(randomx==1) {
 					
 					System.out.println("………………….___…………………………………………….__„„„„-");
@@ -345,31 +347,29 @@ public class finalithink
 					
 					System.out.println("\n   Konata");
 					
-					break; 
+					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)");
+
 				} else if(randomx==2) {
 					System.out.println("placeholder2");
 					
 					
-					break;
+					
 				} else if(randomx==3) {
 					System.out.println("placeholder3");
 					
 					
-					break;
+					
 				} else if(randomx==4) {
 					System.out.println("placeholder4(this shouldn't happen - fix");
 					
 					
-					break;
+					
 				} else {
 					System.out.println("error. - pls fix");
 					break;
 				}
-			} else {
-				
-			}
+			} 
 		}
-		System.out.println("\n\n\nRandom ASCII generator(for no particular reason)");
 
 
 
