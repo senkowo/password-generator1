@@ -1,4 +1,4 @@
-package passwordgenredo;
+package passwordgenredo; 
 
 import java.util.Scanner; 
 import java.util.Random; 
@@ -15,11 +15,39 @@ import java.util.Random;
 										 *[FIXED] Perhaps I shouldn't refer to the "identified application/website name"
 										 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
 										 *   word-parts. That might reduce confusion and keep things straight-forward
-										 *   for the end-user. However, I would have to rewrite everything :marisad: . 
+										 *   for the end-user. However, I would have to rewrite everything :marisad:. 
 										 * - Continue adding onto the completely unnecessary ASCII generator. 
-										 * - Having too many vowels in the identified name results in scientific notation(?) 
-										 *   (e.g. 1.248956297E9) (fix is rather long). 
+										 * - Having too many vowels in the identified name (like a lot) results in 
+										 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long). 
 										 */ 
+										 
+										 
+										/*    Ways to improve (might make overcomplicated): 
+										 *      Add stuff like this:
+										 * String sysOs = name of the OS/browser/device. 
+                                         * Make sysOs all CAPS. 
+                                         * Make sysOs shortened to max 4 or 5 letters, depending on ease of use. 
+                                         * Determine based on which is easier to remember. 
+                                         * e.g. CHRO < CHROM (Google Chrome). 
+                                         * CHROM is obviously easier to remember, so use that. 
+                                         * if both options are reasonable, default to max 4 letters. 
+                                         * On Scratch, maybe after user string input, display both 4 letter and 5 letter options. Then, let the user select which option is easier to remember and more appropriate. 
+                                         * Add sysOs to end of passcode string. 
+										 *
+										 * sAdd –= number of letters in identified software name
+                                         * Compound operator btw
+                                         * e.g. lkClsslnkCHROM, 7 letters 
+                                         * accType –= 7
+                                         * 28561 –= 7 
+                                         * sAdd = 28554 
+                                         * Add sAdd integer to the end of the password string. 
+										 */
+										 
+										 
+									    /* etc 
+										 * - Copy this into eclipse and git move to main. 
+										 *
+										 */
 
 
 
@@ -56,9 +84,9 @@ public class finalithink
 
 		
 		
-				// Below states root1, root2, root3, root4, and root5. 
+				// Below prompts for root1, root2, root3, root4, and root5. 
 		
-		System.out.println("Please enter the first furthest-most divisible word-component (or next divisible sub-word)\n  of the identified name (e.g. \"git\" in \"git-hub\"):"); 
+		System.out.println("Please enter the first furthest-most divisible word-component (or next divisible sub-word)\n  of the identified name (e.g. \"git\" in \"git-hub-account\") [>10 letters in total reccomended]:"); 
 		root1 = sc.nextLine(); 
 		root1 = root1.replace(" ", ""); 
 		root1 = root1.toLowerCase(); 
@@ -66,7 +94,7 @@ public class finalithink
 		System.out.println("1st Root: "  + "\"" + root1  + "\"" + "\n");
 		
 		while(true) {
-			System.out.println("Input second sub-word? [max 5] (y/n)");
+			System.out.println("Input second sub-word? [max 5] (y/n)\n  (like the \"hub\" in \"git-hub-account\")");
 			yn = sc.nextLine(); 
 			if(yn.equalsIgnoreCase("n")) {
 				break; 	
@@ -150,9 +178,12 @@ public class finalithink
 		
 
 		
-				// Below counts the number of variables in the string and stores it in numVowels. 
+		
 
 		pass = root5+root4+root3+root2+root1; 
+		
+				// Below counts the number of variables in the string and stores it in numVowels. 
+			
 			/* Note: This "for" script below counts the number of vowels in the String; 
 			Copied from Stack Overflow like a true programmer. 
 			I don't even know what it means XD. -But it works! */
@@ -262,6 +293,7 @@ public class finalithink
 		
 		
 		// Adds "accTypeD to the power of numVowelsD" to the end of the "pass" String. 
+		// Then removes ".0" from String.
 		pass += accVow; 
 		pass = pass.replaceAll(" ",""); 
 		pass = pass.replaceAll(".0",""); 
@@ -287,13 +319,17 @@ public class finalithink
 		
 		// Completely unnecessary ASCII art generator. 
 		
+		boolean activationOne = false; 
+		boolean activationTwo = false; 
+		
 		while(true) {
 			yn = sc.nextLine(); 
 			if(yn.equalsIgnoreCase("9")) {
 				Random ran = new Random(); 
-				int randomx = ran.nextInt(4); 
+				int randomx = ran.nextInt(2); 
 				
 				if(randomx==0) {
+				    activationOne = true; 
 					System.out.println("	　　　　＿_　　 _____　　 ＿_____");
 					System.out.println("	　　　,´　_,, '-´￣￣｀-ゝ 、_ イ、");
 					System.out.println("	　 　 'r ´　　　　　　　　　　ヽ、ﾝ、");
@@ -305,11 +341,13 @@ public class finalithink
 					System.out.println("	　　　 | ||ヽ、　　　　　　 ,ｲ| ||ｲ| /　　￣^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^￣");
 					System.out.println("	　　 　レ ル｀ ー--─ ´ルﾚ　ﾚ´");
 					
-					System.out.println("\n   Yukkuri.");
+					System.out.println("\n   Yukkuri Reimu from Touhou.");
 					
-					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)");
+					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)\n   [\"end\" to exit] [\"9\" for another]");
+					
 
 				} else if(randomx==1) {
+				    activationOne = true; 
 					
 					System.out.println("………………….___…………………………………………….__„„„„-");
 					System.out.println("……………„-~*¯¸„--~¯**~--¸……………………………_„-~^*¯„-~*");
@@ -345,9 +383,10 @@ public class finalithink
 					System.out.println("…*„/: :.:.:.:.:.:', . . . . . . . .`. . . ... ,' . . . `-, . . . ,' ; ; ; ;|-, ; ; ; \\");
 					System.out.println("…..*„:.:.:.:.:.:.:.', . . . . . . . . .. . . / . . . . . . . . . | ; ; ; ;| . **^„ ; \\");
 					
-					System.out.println("\n   Konata");
+					System.out.println("\n   Konata from Lucky Star");
 					
-					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)");
+					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)\n   [\"end\" to exit] [\"9\" for another]");
+					
 
 				} else if(randomx==2) {
 					System.out.println("placeholder2");
@@ -368,7 +407,9 @@ public class finalithink
 					System.out.println("error. - pls fix");
 					break;
 				}
-			} 
+            } else if(yn.equalsIgnoreCase("end")) {
+                break;
+            }
 		}
 
 
@@ -387,4 +428,11 @@ public class finalithink
 		sc.close();
 	}
 }	
+
+
+
+
+
+
+
 
