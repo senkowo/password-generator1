@@ -16,13 +16,13 @@ import java.util.Random;
 										 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
 										 *   word-parts. That might reduce confusion and keep things straight-forward
 										 *   for the end-user. However, I would have to rewrite everything :marisad:. 
-										 * - Continue adding onto the completely unnecessary ASCII generator. 
+										 *[COMPLETED] Continue adding onto the completely unnecessary ASCII generator. 
 										 * - Having too many vowels in the identified name (like a lot) results in 
 										 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long). 
 										 */ 
 										 
 										 
-										/*    Ways to improve (might make overcomplicated): 
+										/*    Ways to improve (might make over-complicated): 
 										 *      Add stuff like this:
 										 * String sysOs = name of the OS/browser/device. 
                                          * Make sysOs all CAPS. 
@@ -33,7 +33,7 @@ import java.util.Random;
                                          * if both options are reasonable, default to max 4 letters. 
                                          * On Scratch, maybe after user string input, display both 4 letter and 5 letter options. Then, let the user select which option is easier to remember and more appropriate. 
                                          * Add sysOs to end of passcode string. 
-										 *
+										 * ---
 										 * sAdd –= number of letters in identified software name
                                          * Compound operator btw
                                          * e.g. lkClsslnkCHROM, 7 letters 
@@ -324,7 +324,7 @@ public class finalithink
 			yn = sc.nextLine(); 
 			if(yn.equalsIgnoreCase("9")) {
 				Random ran = new Random(); 
-				int randomx = ran.nextInt(3); 
+				int randomx = ran.nextInt(4); 
 				
 				if(randomx==0) {
 					System.out.println("	　　　　＿_　　 _____　　 ＿_____");
@@ -443,9 +443,77 @@ public class finalithink
 					
 					
 				} else if(randomx==3) {
-					System.out.println("placeholder3");
 					
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMNdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMd+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMm-+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMNo--+hNMMMMMMMMMMMNmmmddddmmmNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMNs:--:+shdddhhs+/::------:::://+sydmNMMMMMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMNdyso/:--------------------------:/ohmNMMMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMNds/-.------------------------------:/sdNMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMNdo:---------------------------------------/hNMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMNh+-.-------------------------------------------/hNMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMmy/-.--::-----------/-----------------------::-------+mMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMNho:-----::------------+--------------------------:--------hMMMMMMMMMMM");
+					System.out.println("MMMNNmhs/----:---::------------+/-------------:-------------/--------yMMMMMMMMMM");
+					System.out.println("myo/:-----:+o:--/-------:-----+o-------------/:--------------/--------sMMMMMMMMM");
+					System.out.println("MMNNmddddmNy--:/-------/--:::+/+------------::+:::------------/--------yMMMMMMMM");
+					System.out.println("MMMMMMMMMMh.`:/------:/----:+://-----------:/-:/-------:-------/-------:hMMMMMMM");
+					System.out.println("MMMMMMMMMd.`:/-.-----+----//-.:/-----------+-..//------::----.-:/-------/mMMMMMM");
+					System.out.println("MMMMMMMMN:.:/--...--o:--:+:-..//--.-------:/....//------+-..-.--:/-------oNMMMMM");
+					System.out.println("MMMMMMMMo-:/-------o/-/shhhdddo/--....----+.odhhyhy/----+:-------/:------/hMMMMM");
+					System.out.println("MMMMMMMm-//-------/o/ymNmmdddh/+-:-------:/.sddmNNNmo:--+:--------/:------oNMMMM");
+					System.out.println("MMMMMMMs/+-------:yhmdshmNNNNm/-//:--:---/../sdNNNNmhy+:+/-------/-:/-----+hMMMM");
+					System.out.println("MMMMMMMso--------sdd/-:dNmNmmNy`//+:-/:--+`.-omNNNNNmsoyyo-------/+::/:---/oNMMM");
+					System.out.println("MMMMMMMy:-------:dh` /odmmmmmmh``/+/::/-::`-oymmmmmmmm-.ys--------o++////:/+mMMM");
+					System.out.println("MMMMMMN:--------+h. `dmmmmmmmmy ``////+:/-`ymmmmmmmmmN. `o--------//-:///+oohMMM");
+					System.out.println("MMMMMM+--------:o+   shosyysyd-````--:+o/-`sdhdmmmddmh`  o---------+-----:/+dMMM");
+					System.out.println("MMMMMy---------++...``/-----/-`````````/+-`.o/-:/::+y.  `o-:::::::-+:--:-:++NMMM");
+					System.out.println("MMMMm:-------:+:.`........``````````````/-```.------.`...+:::::::-:o:::::/oyMMMM");
+					System.out.println("MMMM+----:---:/```......`````````````````.```...........-/:::::::::o:::::ohMMMMM");
+					System.out.println("MMMd-:---:---:o```````````````````.````..`````.........`:::::::::::o::::yNMMMMMM");
+					System.out.println("MMM+-/----:--oy/.-......-````````````..````......```````+::::::::::s//:-NMMMMMMM");
+					System.out.println("MMN-:+----:--yh .-......:-................:..`...:...--:+:::::::::-o----NMMMMMMM");
+					System.out.println("MMN-/+----/::dN. ````````    ````.........:::-----.``  ./:::::::::+/---/MMMMMMMM");
+					System.out.println("MMN-/s-:--+::mM/```             ````````````````````   /://:::::::o-::/sMMMMMMMM");
+					System.out.println("MMM/+d---:o/:NMy////::::---..`````````````````````````:/++:::::::ssossohMMMMMMMM");
+					System.out.println("MMMyoMo--:+o:NMm/++++++++++++++++++++++++++++++++++++soo+/:::::/ssooooomMMMMMMMM");
+					System.out.println("MMMMsMN/:-+d/dMN//++++++++++++++++++++++++++++++++++sos+/::::/ososssoo+NMMMMMMMM");
+					System.out.println("MMMMNMMN+-/dmyMN:  `...-::::////++++++++ooooo++++++oos+:-:/+/+/::--..--NMMMMMMMM");
+					System.out.println("MMMMMMMMMy:yMNNM+                                 ./+/////:.----------/MMMMMMMMM");
+					System.out.println("MMMMMMMMMMmyNMMMy                                `-..` .--------------oMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMm                                      .--------------sMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMN- `                                   .-------------.dMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMM+/+/-`                               `.-------------.NMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMs++++/.-.`                        `..-+ooo.----------NMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMm/++++oo//+/:--.--...```....---.:/++oosoos.---------/MMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMN/++s+oo+/so++oo++++++/o++++++++y+++osoooo.---------oMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMM/++o+os++so++oo++o++++y/++o++++y++++ooos:---------.yMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMo.++++s+++o+++o+++++++y/++++++o/++++oos-----------.dMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMd `-::/o++++++s+++s+++y/+/so+++o`/+osso-----------.NMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMN`     `/+++++s/++so+/s++/os++++`-:/:-------------:NMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMN:        `..`:///////+//:-..`    `---------------/MMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMM+           ./:-/:.              .---------------oMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMy           .::-::-`            `---------------.yMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMm            .....`            `.---------------.dMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMN-                             .----------------.NMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMM/                            `-----------------:NMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMy-.``                       `--------------:://sMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMm/+////:-..````            `.-----::://++oooooohMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMN//+++++++++///////////////+oooooooosoooooooooodMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMM/`.-://++++++++++++++++++ooooooooooooooo+//:-.mMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMh-`    `..---::///////++ooo+++////:::--------+NMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMNho/.``             `.-----------------:/ohmMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMNdyso+:-.`````-----------:/+osyhdmNMMMMMMMMMMMMMMMMMM");
+					System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNmmmmmmmNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+
+					System.out.println("\n   Nadeshiko (in curry noodle cup) from Yuru-camp");
 					
+					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)\n   [\"end\" to exit] [\"9\" for another]");
+
 					
 				} else if(randomx==4) {
 					System.out.println("placeholder4(this shouldn't happen - fix");
