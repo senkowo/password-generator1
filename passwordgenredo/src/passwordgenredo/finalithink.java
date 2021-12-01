@@ -11,7 +11,7 @@ import java.util.Random;
 										 * - Inputting a letter for the 1-5 number selection will result in an exception. 
 										 * 		Might be fixed if I change the input variable from an int to a String, 
 										 * 		then have it checked to see if only numbers 1-5 exists, and if not, prompt
-										 * 		an error and re-input. If yes, proceed. 
+										 * 		an error and re-input. If yes, proceed. Might debug very soon. 
 										 *[FIXED] Perhaps I shouldn't refer to the "identified application/website name"
 										 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
 										 *   word-parts. That might reduce confusion and keep things straight-forward
@@ -21,6 +21,15 @@ import java.util.Random;
 										 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long). 
 										 */ 
 										 
+									    /*      Strengths and weaknesses: 
+									     * + The biggest strengths of my program lie in its complexity, ability to adjust complexity
+										 *       based on password importance, and relative ease of use. 
+										 *
+										 * - The main weakness of my program is the necessity to add extra words into the initial name
+										 *       to make the password secure. For example, an input like "git-hub" would result in  
+										 *       something like "gthb8," which isn't very secure. It then becomes necessary to add 
+										 *       extra words, like "account" to the end of "git-hub" (git-hub-account). 
+										 */
 										 
 										/*    Ways to improve (might make over-complicated): 
 										 *      Add stuff like this:
@@ -42,13 +51,14 @@ import java.util.Random;
                                          * sAdd = 28554 
                                          * Add sAdd integer to the end of the password string. 
 										 */
-										 
-										 
-									    /* etc 
+										 			 
+									    /* etc (note-to-self)
 										 * - Copy this into eclipse and git move to main. 
-										 *
-										 */
-
+										 * - New senko-san and ["end" option after pass generated]. 
+										 * - [Enter "9" ]
+										 * 
+										 * 
+										*/ 
 
 
 
@@ -272,8 +282,8 @@ public class finalithink
 		
 		
 		/* Receives input for account type (integer accType).
-		 * Then, converts accType and numVowels from int to double, so can use Math.pow command. 
-		 * Raises accTypeD(double) to the power of numVowelsD(double); assigns to new double variable accVow. 
+		 * Then, converts accType and numVowels from int to two doubles, so can use the Math.pow command. 
+		 * Then, does accTypeD(double) ^ numVowelsD(double); assigns to new double variable accVow. 
 		*/
 		
 		System.out.println("\nWhat type of account will this password be associated with?");
@@ -292,13 +302,13 @@ public class finalithink
 		}
 		
 		
-		// Adds "accTypeD to the power of numVowelsD" to the end of the "pass" String. 
+		// Adds the previous exponential equation's product to the end of the "pass" String. 
 		// Then removes ".0" from String.
 		pass += accVow; 
 		pass = pass.replaceAll(" ",""); 
 		pass = pass.replaceAll(".0",""); 
 		
-		
+		//Asks to add an exclamation point at the end. 
 		System.out.println("\nFinally, do you want an exclamation point at the end of the password? (y/n)\n[if it's an important password, might as well add it!]\n   (probably doesn't make much of a difference from a cybersecurity-perspective though...)");
 		while(true) {
 			yn = sc.nextLine(); 
@@ -312,9 +322,9 @@ public class finalithink
 			}
 		}
 		
-		
+			//Final output
 		System.out.println("\n\n"+ pass);
-		System.out.println("Password Generated.\nSmart Cirno ᗜˬᗜ\n\n[press 9 for secret]");
+		System.out.println("Password Generated.\nSmart Cirno ᗜˬᗜ\n\n[enter \"9\" for secret] [\"end\" to finish]");
 		
 		
 		// Completely unnecessary ASCII art generator. 
@@ -324,7 +334,7 @@ public class finalithink
 			yn = sc.nextLine(); 
 			if(yn.equalsIgnoreCase("9")) {
 				Random ran = new Random(); 
-				int randomx = ran.nextInt(4); 
+				int randomx = ran.nextInt(5); 
 				
 				if(randomx==0) {
 					System.out.println("	　　　　＿_　　 _____　　 ＿_____");
@@ -516,10 +526,65 @@ public class finalithink
 
 					
 				} else if(randomx==4) {
-					System.out.println("placeholder4(this shouldn't happen - fix");
 					
+					System.out.println("                                     :+osssso+..``                          `-///.`                 ");
+                    System.out.println("                                   .+oossssoo..```                       `-/++++.`                  ");
+                    System.out.println("                                 `:+oossssoo-                         `-/+oooo/.`                   ");
+                    System.out.println("                                .:/+++ooooo/`                      `-/+oooooo/.``                   ");
+                    System.out.println("                              `-::::::///+/.``     ```          `.:+oosssssoo-``                    ");
+                    System.out.println("                             `-::::::::::/-..```  `-----.``` `.-::/ooosssso+-.``                    ");
+                    System.out.println("                          `.::::::::::::::..```    `-::::::-::::::///+oooo:`` `                     ");
+                    System.out.println("                        `--::::::::::::::..```  `..--::::::::::://:::/+++-```                       ");
+                    System.out.println("                      .---::::::::::::::-```````-:::::::::::::::::///://...`                        ");
+                    System.out.println("                    `----::::::::::::::/-```-:::::::::::::::::::::/:://-.```                        ");
+                    System.out.println("                  `.-------:::::::::::/::-.-:::::::::::::::::/::::://:::-.``                        ");
+                    System.out.println("                 `------------::::::::-------:::::::::::::::::/:::::://:::-`                        ");
+                    System.out.println("                .---------------:::----------:::::::::::::::---:::::::::/:::.`                      ");
+                    System.out.println("               .----------------::--------------:::::::::::-----:::::::::/:::-.`                    ");
+                    System.out.println("              ..---------------:-----------------::-:::-:::------::-------::::--.`                  ");
+                    System.out.println("             ...--------------:-...--------------::------:--------:--------+oo+---.`                ");
+                    System.out.println("            ...--------------:--..--.-----------::-------:---------:----/oo+-.-/+-...`              ");
+                    System.out.println("           `...-------------:------------------:::------::--------------+ss:   :o:..--.`            ");
+                    System.out.println("          ````...---------------------------:-::-::-----/--------...-----/so:-:+o:--......`         ");
+                    System.out.println("          .``...--------------------------:::::---::---:/--------...:----:oso:++/.```.......```     ");
+                    System.out.println("          ....----------------:----------::--.`````-:-:/:--------...:-----::/..--       ```````     ");
+                    System.out.println("          `..-----:-----------:---------::-.````````-::/------------::------:--:-                   ");
+                    System.out.println("           ..--------::-------:--------::.```````````:/:----------.:--------:--:-`                  ");
+                    System.out.println("           `-.----------------:------:osooo+:..-..```./----------...:-------:--:-`                  ");
+                    System.out.println("            ...------:--------:-----:ohyyhhddhs/-..``.------------``.-------:----`                  ");
+                    System.out.println("             -.------:--------:-----+/. .yyhd+/sy-```----------:+/:.`.------:----`                  ");
+                    System.out.println("             ..------:--------:---:o./o+/hysys``--``---::-----ohhhhho-.-----:--/:`                  ");
+                    System.out.println("              -.-:---:------------:/`ooshdhsss  ```.-:/:-----//yh/-/yh+.:---/----                   ");
+                    System.out.println("              `--:-------------:-:--`::+sso/:-  ``-:--/-----/--ss+``-yo://-:/---.                   ");
+                    System.out.println("               ----------------:-----.-----.`  ``.-``:----..sssso/  -:-//:::--.-`                   ");
+                    System.out.println("               .------:---------:----.`-///-````````.:---``.oso::` ``./:/:-:-...                    ");
+                    System.out.println("              `-------:---------------......````````--..````:-..````-::/::-:---`                    ");
+                    System.out.println("             `-.--::--/----------------.```````````.-```````-:-````.:://:::-.-.                     ");
+                    System.out.println("           `.---::::::/-----------------.`````````````````````````./:///:::--`                ```   ");
+                    System.out.println("       ``..---:::///:://-::----------:---.````````````````````````:::/:::::--`              ` ```   ");
+                    System.out.println("   `...---::::::////////:-::-----------``.`````.:------.``````````:::::-::::-.             `````````");
+                    System.out.println("     `..--:::::://////////:/::---------````````:::::////.`````````/::::-:-----`           ``````````");
+                    System.out.println("          `````.-/:://///////::--------.````````.....--.````````.:/:/::.-`.-..-`           `````````");
+                    System.out.println("                -:::::::///////::------:.````````````````````.-::://:::.-  ``...`       ``` ````````");
+                    System.out.println("                ::::``::////////::-----:---.```````````````.:::::///::--.     ```      ```` ````````");
+                    System.out.println("                :::`  `///////ss///:---:-..---..````..```  `::::://:::--`         ``````````````````");
+                    System.out.println("                -:.-:+sy+///+o:oy+o+/--:-....-/::::::-      .::::/:::--`         ```````````````````");
+                    System.out.println("                .-:syhhhho/ohhy//ss/++:::-..-+/:::::/-......`-::::::--.             ````````````````");
+                    System.out.println("                 `.syhhyo:``.-/+:-/+--+/s/:-+s:////ohho:::oy-`://:::-.`           ``````````````````");
+                    System.out.println("                   -oos:`       ``.....:oys+/s/-:+oyyho//+yd:`:::::-.`         `````````````````````");
+                    System.out.println("                   `:/.            `..:o/:oysys./ss-``.-//yd- .`-:-.`        ```````````````````````");
+                    System.out.println("                  .//`              `..:oo:/syy:/soo-    `-o- ` `-.`   `    ````````````````````````");
+                    System.out.println("                 -o+`                ```./o+-/so:s-+s-      ```  .` ````````````````````````````````");
+                    System.out.println("                -oo.                 `````./:.-/-+:`os:  `   `-`  ``````````````````````````````````");
+                    System.out.println("               `/o/             `.:://:::`   `````` .sy/``   -/-` ````` ````````````````````````````");
+                    System.out.println("                `..           `:++:.``` ```    :: -` -yy+` `:/.`````````````````````````````````````");
+                    System.out.println("                 ``         `:+/-  `.-//-`-/    .`+-  /yy+./:`.-` ```````.``````````````````````````");
+                    
+                    System.out.println("\n   Senko-san, the helpful fox");
 					
-					
+					System.out.println("\n\n\nRandom ASCII generator(for no particular reason)\n   [\"end\" to exit] [\"9\" for another]");
+				            
+				
 				} else {
 					System.out.println("error. - pls fix");
 					break;
