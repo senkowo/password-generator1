@@ -27,9 +27,13 @@ import java.util.Random;
 										 *
 										 * - The main weakness of my program is the necessity to add extra words into the initial name
 										 *       to make the password more secure. For example, an input like "git-hub" would result in  
-										 *       something like "gthb8," which isn't very secure. It then becomes necessary to add 
-										 *       extra words, like "account" to the end of "git-hub" (git-hub-account). 
-										 */
+										 *       something like "GtHb8," which isn't very secure. It then becomes necessary to add 
+										 *       extra words, like "account" to the end of "git-hub" (git-hub-account) (output: "ccntHbGt243"). 
+										 * - Another weakness is the last prompt with adding an exclamation point. When I make my passwords,
+										 *       I decide whether to put a particular symbol at the end or not using sheer intuition, and 
+										 *       that initial decision for my password sticks to my memory. However, for this project, 
+										 *       it might be better to use a more logic-based approach to that decision. 
+										 */ 
 										 
 										/*    Ways to improve (might make over-complicated): 
 										 *      Add stuff like this:
