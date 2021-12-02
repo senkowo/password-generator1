@@ -11,7 +11,7 @@ import java.util.Random;
 										 * - Inputting a letter for the 1-5 number selection will result in an exception. 
 										 * 		Might be fixed if I change the input variable from an int to a String, 
 										 * 		then have it checked to see if only numbers 1-5 exists, and if not, prompt
-										 * 		an error and re-input. If yes, proceed. Might debug very soon. 
+										 * 		an error and re-input. If yes, proceed. Might fix this very soon. 
 										 *[FIXED] Perhaps I shouldn't refer to the "identified application/website name"
 										 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
 										 *   word-parts. That might reduce confusion and keep things straight-forward
@@ -26,7 +26,7 @@ import java.util.Random;
 										 *       based on password importance, and relative ease of use. 
 										 *
 										 * - The main weakness of my program is the necessity to add extra words into the initial name
-										 *       to make the password secure. For example, an input like "git-hub" would result in  
+										 *       to make the password more secure. For example, an input like "git-hub" would result in  
 										 *       something like "gthb8," which isn't very secure. It then becomes necessary to add 
 										 *       extra words, like "account" to the end of "git-hub" (git-hub-account). 
 										 */
@@ -281,12 +281,15 @@ public class finalithink
 		
 		
 		
-		/* Receives input for account type (integer accType).
+		/* Below receives input for account type (integer accType).
 		 * Then, converts accType and numVowels from int to two doubles, so can use the Math.pow command. 
 		 * Then, does accTypeD(double) ^ numVowelsD(double); assigns to new double variable accVow. 
 		*/
+		        // If letters are inputted below instead of numbers, it will result in an exception. 
+		        // If I change the input variable from an int to a String, I should be able to make a
+		        //     system that prompts for a reinput in the case of an incorrect number input OR letter. 
 		
-		System.out.println("\nWhat type of account will this password be associated with?");
+		System.out.println("\nWhat type of account will this password be associated with? [#'s 1-5 only]");
 		System.out.println("Type 5 if it's for an important or secure account\nType 4 if it's for somewhat personal use\nType 3 if it's for school/educational use\nType 2 if it's for misc use\nType 1 if it's for \"junk\" (not high importance).");
 		while(true) {
 			accType = sc.nextInt(); 
@@ -302,7 +305,7 @@ public class finalithink
 		}
 		
 		
-		// Adds the previous exponential equation's product to the end of the "pass" String. 
+		// Adds the previous exponential equation's product (accVow) to the end of the "pass" String. 
 		// Then removes ".0" from String.
 		pass += accVow; 
 		pass = pass.replaceAll(" ",""); 
