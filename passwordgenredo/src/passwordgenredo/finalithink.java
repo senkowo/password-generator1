@@ -293,38 +293,38 @@ public class finalithink
 		
 		
 		
-		/* If the password is less than 8 letters long, it will prompt for the browser name (or OS name).
+		/* If the password is less than 10 letters long, it will prompt for the browser name (or OS name).
 		 * Then, it will convert the input to Upper case, and will repeatedly remove letters from the end of 
 		 * the inputed browser name (which will later be added to the end of the password), until the necessary 
-		 * number of letters in the browser name for the password to be at least 8 letters long--when put at
+		 * number of letters in the browser name for the password to be at least 10 letters long--when put at
 		 * the end of the password--would be fulfilled. 
 		 *
 		 * Furthermore, if the password importance (accType) is set to 3, 4, or 5, the 
 		 * browser name that will be added onto the password at the end will not cap out 
-		 * at 8 letters (when looking at the password as a whole). 
-		 * If accType <= 2, will cap out at 8 letters (8 letter password). 
-		 * If accType = 3, will cap out at 10 letters.
+		 * at 10 letters (when looking at the password as a whole). 
+		 * If accType <= 2, will cap out at 10 letters (10 letter password). 
+		 * If accType = 3, will cap out at 12 letters.
 		 * If accType = 4, will cap out at 16 letters. 
 		 * If accType = 5, will cap out at 20 letters. 
-		 * Note that if the password is longer than 8 letters beforehand, it will not go through 
+		 * Note that if the password is longer than 10 letters beforehand, it will not go through 
 		 * this subscript and therefore, not be limited by a max number of letters. 
 		 */
 		int passLength = pass.length(); 
-		if (passLength <= 7) {
-			int numNeededLetters = 7 - passLength; 
+		if (passLength <= 9) {
+			int numNeededLetters = 9 - passLength; 
 			int accTypex = accType; 
 			if (accType < 3) {
 				accTypex = 0;
 			} else if (accType == 3) {
 				accTypex = 2;
 			} else if (accType == 4) {
-				accTypex = 8;
+				accTypex = 6;
 			} else if (accType == 5) {
-				accTypex = 12;
+				accTypex = 10;
 			} else {
 				System.out.println("error, fix this.");
 			}
-			System.out.println("\nPlease enter the name of your Browser.\nIf not applicable, enter the OS name.");
+			System.out.println("\nNot enough inputs, so the password is too short.\n...Adding more inputs to generate secure password:\n- Please enter the name of your Browser.\n- If not applicable, enter the OS name.");
 			String extraInput = sc.nextLine(); 
 			extraInput = extraInput.replace(" ", ""); 
 			extraInput = extraInput.toUpperCase(); 
