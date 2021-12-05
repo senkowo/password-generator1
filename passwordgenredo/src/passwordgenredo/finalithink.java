@@ -15,48 +15,29 @@ import java.util.Random;
 									 * - I can't really think of any weakness to my program, so perhaps one would be the lack 
 									 * 		 of a GUI. If I have A LOT of time on my hands, I might be able to learn how to make 
 									 * 		 one in Eclipse IDE or something XD. 
-									 *[FIXED!] The main weakness of my program is the necessity to add extra words into the initial name
-									 *       to make the password more secure. For example, an input like "git-hub" would result in  
-									 *       something like "GtHb8," which isn't very secure. It then becomes necessary to add 
-									 *       extra words, like "account" to the end of "git-hub" (git-hub-account) (output: "ccntHbGt243"). 
-									 *       To fix this, I might add a checking system to see if the password is less than 8, and 
-									 *       if true, add extra letters and numbers based on previous inputs. 
-									 *[FIXED!] Another weakness is the last prompt with adding an exclamation point. When I make my passwords,
-									 *       I decide whether to put a particular symbol at the end or not using sheer intuition, and 
-									 *       that initial decision for my password sticks to my memory. However, for this project, 
-									 *       it might be better to use a more logic-based approach to that decision. 
 									 */ 
 
-									/* Current issues
+									/*		Current issues: 
 									 * - Inputting a single letter (that is also a vowel) for any "root"/sub-word 
 									 *   will result in an exception. 
 									 * 		There is a fix but with my little experience, it will be very 
 									 * 		unoptimized and excruciating to type out. bruh. 
-									 * - Inputting a letter for the 1-5 number selection will result in an exception. 
-									 * 		Might be fixed if I change the input variable from an int to a String, 
-									 * 		then have it checked to see if only numbers 1-5 exists, and if not, prompt
-									 * 		an error and re-input. If yes, proceed. Might fix this very soon. 
-									 *[FIXED] Perhaps I shouldn't refer to the "identified application/website name"
-									 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
-									 *   word-parts. That might reduce confusion and keep things straight-forward
-									 *   for the end-user. However, I would have to rewrite everything :marisad:. 
-									 *[COMPLETED] Continue adding onto the completely unnecessary ASCII generator. 
-									 * - Having too many vowels in the identified name (like a lot) results in 
-									 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long). 
+									 * - Having too many vowels in the identified name (like a lot; ~10) results in 
+									 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long).
+									 *   
 									 */ 
 
 									    
 	 
 									/*    Ways to improve (might make over-complicated): 
 									 * 
-									 *
 									 * 
 									 */
 									 			 
-								    /* etc (note-to-self)
+								    /*    etc (note-to-self)
 									 * - Copy this into eclipse and git move to main. 
 									 * 
-									*/ 
+									 */ 
 
 
 
@@ -67,6 +48,8 @@ public class finalithink
 
 	public static void main(String[] args) 
 	{
+			// Below declares + assigns key variables. 
+		
 		String pass = "";
 		String yn = ""; 
 		String root1 = ""; 
@@ -79,8 +62,7 @@ public class finalithink
 		int accType = 0; 
 		double accVow = 0; 
 		
-				// Above declares + assigns key variables. 
-				// Below is intro. 
+				// Below is introduction. 
 		
 		Scanner sc = new Scanner(System.in); 
 		
@@ -92,7 +74,8 @@ public class finalithink
 
 		
 		
-				// Below prompts for root1, root2, root3, root4, and root5. 
+				// Below prompts for root1, root2, root3, root4, and root5 inputs. 
+				// If there's no need for a root 4, will skip over inputs for root 4 and 5.
 		
 		System.out.println("Please enter the first furthest-most divisible word-component (or next divisible sub-word)\n  of the identified name (e.g. \"git\" in \"git-hub-account\") [>10 letters in total reccomended]:"); 
 		root1 = sc.nextLine(); 
@@ -277,20 +260,21 @@ public class finalithink
 		
 		
 		
-		/* Below receives input for account type (integer accType).
-		 * Then, converts accType and numVowels from int to two doubles, so can use the Math.pow command. 
-		 * Then, does accTypeD(double) ^ numVowelsD(double); assigns to new double variable accVow. 
+		/* Below receives input for account type (String accTypeS).
+		 * If String input is equal to "1" "2" "3" "4" or "5", will convert String to an int (int accType). This is 
+		 * 		so if letters are accidentally inputed, it will not result in an exception (as letters cannot
+		 * 		go in int variables). It should instead prompt for re-input. 
+		 * Then, converts accType and numVowels from two integers to two doubles, so can use the Math.pow command. 
+		 * Then, does accTypeD(double) ^ numVowelsD(double); assigns to new double variable "accVow." 
 		*/
-		        // If letters are inputted below instead of numbers, it will result in an exception. 
-		        // If I change the input variable from an int to a String, I should be able to make a
-		        //     system that prompts for a reinput in the case of an incorrect number input OR letter. 
 		
 		System.out.println("\nWhat type of account will this password be associated with? [#'s 1-5 only]");
 		System.out.println("Type 5 if it's for an important or secure account\nType 4 if it's for somewhat personal use\nType 3 if it's for school/educational use\nType 2 if it's for misc use\nType 1 if it's for \"junk\" (not high importance).");
 		while(true) {
-			accType = sc.nextInt(); 
-			sc.nextLine(); 
-			if(accType == 1 || accType == 2 || accType == 3 || accType == 4 || accType == 5) {
+			String accTypeS = sc.nextLine(); 
+			accTypeS = accTypeS.replace(" ", ""); 
+			if( (accTypeS.equals("1")) || (accTypeS.equals("2")) || (accTypeS.equals("3")) || (accTypeS.equals("4")) || (accTypeS.equals("5")) ) {
+		        accType = Integer.parseInt(accTypeS);
 				double accTypeD = accType; 
 				double numVowelsD = numVowels; 
 				accVow = Math.pow(accTypeD, numVowelsD); 
@@ -302,7 +286,7 @@ public class finalithink
 		
 		
 		// Adds the previous exponential equation's product (accVow) to the end of the "pass" String. 
-		// Then removes ".0" from String.
+		// Then removes ".0" from String (because it's a double; easier than converting back to int).
 		pass += accVow; 
 		pass = pass.replaceAll(" ",""); 
 		pass = pass.replaceAll(".0",""); 
@@ -314,6 +298,16 @@ public class finalithink
 		 * the inputed browser name (which will later be added to the end of the password), until the necessary 
 		 * number of letters in the browser name for the password to be at least 8 letters long--when put at
 		 * the end of the password--would be fulfilled. 
+		 *
+		 * Furthermore, if the password importance (accType) is set to 3, 4, or 5, the 
+		 * browser name that will be added onto the password at the end will not cap out 
+		 * at 8 letters (when looking at the password as a whole). 
+		 * If accType <= 2, will cap out at 8 letters (8 letter password). 
+		 * If accType = 3, will cap out at 10 letters.
+		 * If accType = 4, will cap out at 16 letters. 
+		 * If accType = 5, will cap out at 20 letters. 
+		 * Note that if the password is longer than 8 letters beforehand, it will not go through 
+		 * this subscript and therefore, not be limited by a max number of letters. 
 		 */
 		int passLength = pass.length(); 
 		if (passLength <= 7) {
@@ -336,16 +330,6 @@ public class finalithink
 			extraInput = extraInput.toUpperCase(); 
 			int browserNum = extraInput.length(); 
 			
-			/* Furthermore, if the password importance (accType) is set to 3, 4, or 5, the 
-			 * browser name that will be added onto the password at the end will not cap out 
-			 * at 8 letters (when looking at the password as a whole). 
-			 * If accType <= 2, will cap out at 8 letters (8 letter password). 
-			 * If accType = 3, will cap out at 10 letters.
-			 * If accType = 4, will cap out at 16 letters. 
-			 * If accType = 5, will cap out at 20 letters. 
-			 * Note that if the password is longer than 8 letters beforehand, it will not go through 
-			 * this subscript and therefore, not be limited by a max number of letters. 
-			 */
 			while(true) {
 				if (browserNum <= (numNeededLetters + accTypex)) {
 					break;
