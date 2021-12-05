@@ -3,66 +3,60 @@ package passwordgenredo;
 import java.util.Scanner; 
 import java.util.Random; 
 
-										/* Current issues
-										 * - Inputting a single letter (that is also a vowel) for any "root"/sub-word 
-										 *   will result in an exception. 
-										 * 		There is a fix but with my little experience, it will be very 
-										 * 		unoptimized and excruciating to type out. bruh. 
-										 * - Inputting a letter for the 1-5 number selection will result in an exception. 
-										 * 		Might be fixed if I change the input variable from an int to a String, 
-										 * 		then have it checked to see if only numbers 1-5 exists, and if not, prompt
-										 * 		an error and re-input. If yes, proceed. Might fix this very soon. 
-										 *[FIXED] Perhaps I shouldn't refer to the "identified application/website name"
-										 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
-										 *   word-parts. That might reduce confusion and keep things straight-forward
-										 *   for the end-user. However, I would have to rewrite everything :marisad:. 
-										 *[COMPLETED] Continue adding onto the completely unnecessary ASCII generator. 
-										 * - Having too many vowels in the identified name (like a lot) results in 
-										 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long). 
-										 */ 
-										 
-									    /*      Strengths and weaknesses: 
-									     * + The biggest strengths of my program lie in its complexity, ability to adjust complexity
-										 *       based on password importance, and relative ease of use. 
-										 *
-										 * - The main weakness of my program is the necessity to add extra words into the initial name
-										 *       to make the password more secure. For example, an input like "git-hub" would result in  
-										 *       something like "GtHb8," which isn't very secure. It then becomes necessary to add 
-										 *       extra words, like "account" to the end of "git-hub" (git-hub-account) (output: "ccntHbGt243"). 
-										 * - Another weakness is the last prompt with adding an exclamation point. When I make my passwords,
-										 *       I decide whether to put a particular symbol at the end or not using sheer intuition, and 
-										 *       that initial decision for my password sticks to my memory. However, for this project, 
-										 *       it might be better to use a more logic-based approach to that decision. 
-										 */ 
-										 
-										/*    Ways to improve (might make over-complicated): 
-										 *      Add stuff like this:
-										 * String sysOs = name of the OS/browser/device. 
-                                         * Make sysOs all CAPS. 
-                                         * Make sysOs shortened to max 4 or 5 letters, depending on ease of use. 
-                                         * Determine based on which is easier to remember. 
-                                         * e.g. CHRO < CHROM (Google Chrome). 
-                                         * CHROM is obviously easier to remember, so use that. 
-                                         * if both options are reasonable, default to max 4 letters. 
-                                         * On Scratch, maybe after user string input, display both 4 letter and 5 letter options. Then, let the user select which option is easier to remember and more appropriate. 
-                                         * Add sysOs to end of passcode string. 
-										 * ---
-										 * sAdd –= number of letters in identified software name
-                                         * Compound operator btw
-                                         * e.g. lkClsslnkCHROM, 7 letters 
-                                         * accType –= 7
-                                         * 28561 –= 7 
-                                         * sAdd = 28554 
-                                         * Add sAdd integer to the end of the password string. 
-										 */
-										 			 
-									    /* etc (note-to-self)
-										 * - Copy this into eclipse and git move to main. 
-										 * - New senko-san and ["end" option after pass generated]. 
-										 * - [Enter "9" ]
-										 * 
-										 * 
-										*/ 
+
+									/*      Strengths and weaknesses: 
+								     * + The biggest strengths of my program lie in its complexity, ability to adjust complexity
+									 *       based on password importance, and relative ease of use. 
+									 * + Another strength is its ability to add more characters to the end of password if the 
+									 * 		 previous inputs combined weren't long enough to create a secure password. If the 
+									 * 		 password is less than 8 characters, another question is asked, and the answer is
+									 * 		 altered slightly and then added to the end of the password. So, a secure password
+									 *		 is generated every time. 
+									 * - I can't really think of any weakness to my program, so perhaps one would be the lack 
+									 * 		 of a GUI. If I have A LOT of time on my hands, I might be able to learn how to make 
+									 * 		 one in Eclipse IDE or something XD. 
+									 *[FIXED!] The main weakness of my program is the necessity to add extra words into the initial name
+									 *       to make the password more secure. For example, an input like "git-hub" would result in  
+									 *       something like "GtHb8," which isn't very secure. It then becomes necessary to add 
+									 *       extra words, like "account" to the end of "git-hub" (git-hub-account) (output: "ccntHbGt243"). 
+									 *       To fix this, I might add a checking system to see if the password is less than 8, and 
+									 *       if true, add extra letters and numbers based on previous inputs. 
+									 *[FIXED!] Another weakness is the last prompt with adding an exclamation point. When I make my passwords,
+									 *       I decide whether to put a particular symbol at the end or not using sheer intuition, and 
+									 *       that initial decision for my password sticks to my memory. However, for this project, 
+									 *       it might be better to use a more logic-based approach to that decision. 
+									 */ 
+
+									/* Current issues
+									 * - Inputting a single letter (that is also a vowel) for any "root"/sub-word 
+									 *   will result in an exception. 
+									 * 		There is a fix but with my little experience, it will be very 
+									 * 		unoptimized and excruciating to type out. bruh. 
+									 * - Inputting a letter for the 1-5 number selection will result in an exception. 
+									 * 		Might be fixed if I change the input variable from an int to a String, 
+									 * 		then have it checked to see if only numbers 1-5 exists, and if not, prompt
+									 * 		an error and re-input. If yes, proceed. Might fix this very soon. 
+									 *[FIXED] Perhaps I shouldn't refer to the "identified application/website name"
+									 *   as "prefix-root-suffix," but instead, as furthest-devisible, individual 
+									 *   word-parts. That might reduce confusion and keep things straight-forward
+									 *   for the end-user. However, I would have to rewrite everything :marisad:. 
+									 *[COMPLETED] Continue adding onto the completely unnecessary ASCII generator. 
+									 * - Having too many vowels in the identified name (like a lot) results in 
+									 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long). 
+									 */ 
+
+									    
+	 
+									/*    Ways to improve (might make over-complicated): 
+									 * 
+									 *
+									 * 
+									 */
+									 			 
+								    /* etc (note-to-self)
+									 * - Copy this into eclipse and git move to main. 
+									 * 
+									*/ 
 
 
 
@@ -195,10 +189,8 @@ public class finalithink
 		
 
 		pass = root5+root4+root3+root2+root1; 
-		
-				// Below counts the number of variables in the string and stores it in numVowels. 
-			
-			/* Note: This "for" script below counts the number of vowels in the String; 
+				
+			/* Note: This "for" script below counts the number of vowels in the String and stores it in numVowels. 
 			Copied from Stack Overflow like a true programmer. 
 			I don't even know what it means XD. -But it works! */
 		for (int i=0 ; i<pass.length(); i++){
@@ -223,7 +215,7 @@ public class finalithink
 		
 
 
-		/* problem is that if "a" is input for root 3 (or any root for that matter), 
+		/* Exception error: problem is that if "a" is input for root 3 (or any root for that matter), 
 		 * it cannot process in the mess that is below. Add a checking system that will 
 		 * ignore particular root variable if "" before running process(?). 
 		 */
@@ -315,18 +307,61 @@ public class finalithink
 		pass = pass.replaceAll(" ",""); 
 		pass = pass.replaceAll(".0",""); 
 		
-		//Asks to add an exclamation point at the end. 
-		System.out.println("\nFinally, do you want an exclamation point at the end of the password? (y/n)\n[if it's an important password, might as well add it!]\n   (probably doesn't make much of a difference from a cybersecurity-perspective though...)");
-		while(true) {
-			yn = sc.nextLine(); 
-			if(yn.equalsIgnoreCase("n")) {
-				break;
-			} else if(yn.equalsIgnoreCase("y")) {
-				pass += "!"; 
-				break; 
+		
+		
+		/* If the password is less than 8 letters long, it will prompt for the browser name (or OS name).
+		 * Then, it will convert the input to Upper case, and will repeatedly remove letters from the end of 
+		 * the inputed browser name (which will later be added to the end of the password), until the necessary 
+		 * number of letters in the browser name for the password to be at least 8 letters long--when put at
+		 * the end of the password--would be fulfilled. 
+		 */
+		int passLength = pass.length(); 
+		if (passLength <= 7) {
+			int numNeededLetters = 7 - passLength; 
+			int accTypex = accType; 
+			if (accType < 3) {
+				accTypex = 0;
+			} else if (accType == 3) {
+				accTypex = 2;
+			} else if (accType == 4) {
+				accTypex = 8;
+			} else if (accType == 5) {
+				accTypex = 12;
 			} else {
-				System.out.println("Invalid input, please try again.");
+				System.out.println("error, fix this.");
 			}
+			System.out.println("\nPlease enter the name of your Browser.\nIf not applicable, enter the OS name.");
+			String extraInput = sc.nextLine(); 
+			extraInput = extraInput.replace(" ", ""); 
+			extraInput = extraInput.toUpperCase(); 
+			int browserNum = extraInput.length(); 
+			
+			/* Furthermore, if the password importance (accType) is set to 3, 4, or 5, the 
+			 * browser name that will be added onto the password at the end will not cap out 
+			 * at 8 letters (when looking at the password as a whole). 
+			 * If accType <= 2, will cap out at 8 letters (8 letter password). 
+			 * If accType = 3, will cap out at 10 letters.
+			 * If accType = 4, will cap out at 16 letters. 
+			 * If accType = 5, will cap out at 20 letters. 
+			 * Note that if the password is longer than 8 letters beforehand, it will not go through 
+			 * this subscript and therefore, not be limited by a max number of letters. 
+			 */
+			while(true) {
+				if (browserNum <= (numNeededLetters + accTypex)) {
+					break;
+				}
+				extraInput = removeLastChar(extraInput);
+				browserNum -= 1;
+			}
+			pass += extraInput;
+		}
+		
+		// If accType is 3-5 (more secure), then add exclamation point at the end. 
+		// If accType is 1-2 (less important), then add question mark at the end. 
+		if (accType == 3 || accType == 4 || accType == 5) {
+			pass += "!"; 
+		} else if (accType == 1 || accType == 2) {
+			pass += "?";
 		}
 		
 			//Final output
@@ -601,27 +636,17 @@ public class finalithink
             }
 		}
 
-
-
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
 		
 		sc.close();
 	}
+	
+		// Thank you Stack Overflow; this creates a method to remove the last character of a given String, apparently. 
+	public static String removeLastChar(String str) {
+	    return removeLastChars(str, 1);
+	}
+	public static String removeLastChars(String str, int chars) {
+	    return str.substring(0, str.length() - chars);
+	}
 }	
-
-
-
-
-
-
 
 
