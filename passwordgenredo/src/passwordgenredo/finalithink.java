@@ -3,41 +3,43 @@ package passwordgenredo;
 import java.util.Scanner; 
 import java.util.Random; 
 
-
-									/*      Strengths and weaknesses: 
-								     * + The biggest strengths of my program lie in its complexity, ability to adjust complexity
-									 *       based on password importance, and relative ease of use. 
-									 * + Another strength is its ability to add more characters to the end of password if the 
-									 * 		 previous inputs combined weren't long enough to create a secure password. If the 
-									 * 		 password is less than 8 characters, another question is asked, and the answer is
-									 * 		 altered slightly and then added to the end of the password. So, a secure password
-									 *		 is generated every time. 
-									 * - I can't really think of any weakness to my program, so perhaps one would be the lack 
-									 * 		 of a GUI. If I have A LOT of time on my hands, I might be able to learn how to make 
-									 * 		 one in Eclipse IDE or something XD. 
-									 */ 
-
-									/*		Current issues: 
-									 * - Inputting a single letter (that is also a vowel) for any "root"/sub-word 
-									 *   will result in an exception. 
-									 * 		There is a fix but with my little experience, it will be very 
-									 * 		unoptimized and excruciating to type out. bruh. 
-									 * - Having too many vowels in the identified name (like a lot; ~10) results in 
-									 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long).
-									 *   
-									 */ 
-
-									    
-	 
-									/*    Ways to improve (might make over-complicated): 
-									 * 
-									 * 
-									 */
-									 			 
-								    /*    etc (note-to-self)
-									 * - Copy this into eclipse and git move to main. 
-									 * 
-									 */ 
+							/*      Strengths and weaknesses: 
+							 * + The biggest strengths of my program lie in its complexity, ability to adjust complexity
+							 *       based on password importance, and relative ease of use. 
+							 * + Another strength is its ability to add more characters to the end of the password if the 
+							 * 		 previous inputs combined weren't long enough to create a secure password. If the 
+							 * 		 password is less than 8 characters, another question is asked, and the answer is
+							 * 		 altered slightly and then added to the end of the password. So, a secure password
+							 *		 is generated every time. 
+							 * - I can't really think of any weakness to my program, so perhaps one would be the lack 
+							 * 		 of a GUI. If I have A LOT of time on my hands, I might be able to learn how to make 
+							 * 		 one in Eclipse IDE or something XD. 
+							 * - It might also be a little TOO complex for a project like this, but i had fun :3
+							 */ 
+							
+							/*      Current issues: 
+							 * - Having too many vowels in the identified name (like a lot; ~10) results in 
+							 *   scientific notation(?). (e.g. 1.248956297E9) (fix is rather long).
+							 *   
+							 */ 
+							 
+							/*
+							 *      Bug fixes:
+							 * > Fixed issue where inputting a single letter (that is also a vowel) for any "root"/sub-word 
+							 *   will result in an exception. 
+							 * > Made so if password output is less than 10 letters long, will ask another question and 
+							 *   add more letters. 
+							 * > Made so whether to add an exclamation point or not is based on logic.
+							 * > Fixed issue where inputting letters in the 1-5 account type selection results in error.
+							 * > Made so word-components are inputted as all of the same category, instead of dividing 
+							 *   it up into "prefix-root1-root2-root3-suffix".
+							 *
+							 */
+							    
+							 			 
+							/*    etc (note-to-self)
+							 * - Copy this into eclipse and git move to main. 
+							 */ 
 
 
 
@@ -66,10 +68,10 @@ public class finalithink
 		
 		Scanner sc = new Scanner(System.in); 
 		
-		System.out.println("Cirno's Perfect Password Generator (9)"); 
+		System.out.println("\nCirno's Perfect Password Generator ⑨"); 
 		System.out.println("________________________________________\n");
 		System.out.println("First, identify website/application name."); 
-		System.out.println("(You can combine multiple words for more security).");
+		System.out.println("(You can combine multiple words for more security) [>10 letters in total recommended].");
 		System.out.println("  (e.g. \"you-tube-account\" instead of just \"you-tube\").\n");
 
 		
@@ -77,7 +79,7 @@ public class finalithink
 				// Below prompts for root1, root2, root3, root4, and root5 inputs. 
 				// If there's no need for a root 4, will skip over inputs for root 4 and 5.
 		
-		System.out.println("Please enter the first furthest-most divisible word-component (or next divisible sub-word)\n  of the identified name (e.g. \"git\" in \"git-hub-account\") [>10 letters in total reccomended]:"); 
+		System.out.println("Please enter the first furthest-most divisible word-component (or next divisible sub-word)\n  of the identified name (e.g. \"git\" in \"git-hub-account\"):"); 
 		root1 = sc.nextLine(); 
 		root1 = root1.replace(" ", ""); 
 		root1 = root1.toLowerCase(); 
@@ -208,40 +210,40 @@ public class finalithink
 				(probably not optimal) */ 
 	
 		if (numWords == 5) {
-			if(root4 != "") {
+			if(!root4.equals("")) {
 				root4 = root4.substring(0, 1).toUpperCase() + root4.substring(1);
 			}
-			if(root3 != "") {
+			if(!root3.equals("")) {
 				root3 = root3.substring(0, 1).toUpperCase() + root3.substring(1);
 			}
-			if(root2 != "") {
+			if(!root2.equals("")) {
 				root2 = root2.substring(0, 1).toUpperCase() + root2.substring(1);
 			}
-			if(root1 != "") {
+			if(!root1.equals("")) {
 				root1 = root1.substring(0, 1).toUpperCase() + root1.substring(1);
 			}
 			
 		} else if (numWords == 4) {
-			if(root3 != "") {
+			if(!root3.equals("")) {
 				root3 = root3.substring(0, 1).toUpperCase() + root3.substring(1);
 			}
-			if(root2 != "") {
+			if(!root2.equals("")) {
 				root2 = root2.substring(0, 1).toUpperCase() + root2.substring(1);
 			}
-			if(root1 != "") {
+			if(!root1.equals("")) {
 				root1 = root1.substring(0, 1).toUpperCase() + root1.substring(1);
 			}
 			
 		} else if (numWords == 3) {
-			if(root2 != "") {
+			if(!root2.equals("")) {
 				root2 = root2.substring(0, 1).toUpperCase() + root2.substring(1);
 			}
-			if(root1 != "") {
+			if(!root1.equals("")) {
 				root1 = root1.substring(0, 1).toUpperCase() + root1.substring(1);
 			}
 			
 		} else if (numWords == 2) {
-			if(root1 != "") {
+			if(!root1.equals("")) {
 				root1 = root1.substring(0, 1).toUpperCase() + root1.substring(1);
 			}
 			
@@ -268,7 +270,7 @@ public class finalithink
 		 * Then, does accTypeD(double) ^ numVowelsD(double); assigns to new double variable "accVow." 
 		*/
 		
-		System.out.println("\nWhat type of account will this password be associated with? [#'s 1-5 only]");
+		System.out.println("\nWhat type of account will this password be associated with?");
 		System.out.println("Type 5 if it's for an important or secure account\nType 4 if it's for somewhat personal use\nType 3 if it's for school/educational use\nType 2 if it's for misc use\nType 1 if it's for \"junk\" (not high importance).");
 		while(true) {
 			String accTypeS = sc.nextLine(); 
@@ -293,7 +295,7 @@ public class finalithink
 		
 		
 		
-		/* If the password is less than 10 letters long, it will prompt for the browser name (or OS name).
+		/* If the password is less than 10 letters long, it will prompt for the browser name (or OS name if NA).
 		 * Then, it will convert the input to Upper case, and will repeatedly remove letters from the end of 
 		 * the inputed browser name (which will later be added to the end of the password), until the necessary 
 		 * number of letters in the browser name for the password to be at least 10 letters long--when put at
